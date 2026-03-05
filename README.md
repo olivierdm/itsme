@@ -3,6 +3,8 @@
 ### Part 5: Command Output
 
 ```bash
+olivierdemeyst@laptop % curl -I https://raw.githubusercontent.com/olivierdm/itsme/main/profile.ttl
+
 HTTP/2 200 
 cache-control: max-age=300
 content-security-policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
