@@ -24,7 +24,7 @@
     schema:legalName "Ministère de la Défense";
     schema:identifier <kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0308.357.159>;
     odmvoc:elevatorPitch "Belgian Defence is responsible for the national sovereignty of Belgium, participating in collective defense through NATO, and supporting international peace and security through EU and UN missions.";
-    org:hasSubOrganization :LandComponent, :AirComponent, :MaritimeComponent, :MedicalComponent, :CyberCommand .
+    org:hasSubOrganization :LandForce, :AirForce, :Navy, :MedicalService, :CyberForce .
 
 :UnmannedSystems a odmvoc:Topic.
 :KnowledgeGraphs a odmvoc:Topic.  
