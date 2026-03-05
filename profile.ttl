@@ -1,5 +1,5 @@
 @prefix : <#>.
-@prefix tdh: <https://github.com/olivierdm/itsme/blob/main/vocabulary.ttl#>.
+@prefix odmvoc: <https://github.com/olivierdm/itsme/blob/main/vocabulary.ttl#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
@@ -11,24 +11,24 @@
 @prefix ward: <https://www.tabulas.eu/ward/profile.ttl#>.
 @prefix thijs: <https://tdhulster.github.io/knowledge-graphs-ugent-2026/profile.ttl#>.
 
-:me a tdh:Person, tdh:Student;
-  tdh:firstName "Olivier";
-  tdh:lastName "De Meyst";
-  tdh:worksFor :BelgianDefence;
-  tdh:knows seppe:me, ward:me, thijs:me;
-  tdh:interestedIn :UnmannedSystems;
-  tdh:interestedIn :KnowledgeGraphs.
+:me a odmvoc:Person, odmvoc:Student;
+  odmvoc:firstName "Olivier";
+  odmvoc:lastName "De Meyst";
+  odmvoc:worksFor :BelgianDefence;
+  odmvoc:knows seppe:me, ward:me, thijs:me;
+  odmvoc:interestedIn :UnmannedSystems;
+  odmvoc:interestedIn :KnowledgeGraphs.
 
-:BelgianDefence a tdh:Organisation, org:Organization;
-    tdh:name "Belgian Defence";
+:BelgianDefence a odmvoc:Organisation, org:Organization;
+    odmvoc:name "Belgian Defence";
     schema:legalName "Ministère de la Défense";
     schema:identifier "0308.357.159";
-    tdh:elevatorPitch "Belgian Defence is responsible for the national sovereignty of Belgium, participating in collective defense through NATO, and supporting international peace and security through EU and UN missions.";
+    odmvoc:elevatorPitch "Belgian Defence is responsible for the national sovereignty of Belgium, participating in collective defense through NATO, and supporting international peace and security through EU and UN missions.";
     org:hasSubOrganization :LandComponent, :AirComponent, :MaritimeComponent, :MedicalComponent, :CyberCommand .
 
-:UnmannedSystems a tdh:Topic.
-:KnowledgeGraphs a tdh:Topic.  
+:UnmannedSystems a odmvoc:Topic.
+:KnowledgeGraphs a odmvoc:Topic.  
 
-seppe:me a tdh:Person, tdh:Student.
-ward:me a tdh:Person, tdh:Student.
-thijs:me a tdh:Person, tdh:Student.
+seppe:me a odmvoc:Person, odmvoc:Student.
+ward:me a odmvoc:Person, odmvoc:Student.
+thijs:me a odmvoc:Person, odmvoc:Student.
