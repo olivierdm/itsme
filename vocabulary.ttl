@@ -1,0 +1,63 @@
+@prefix : <#>.
+@prefix rdf: <https://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <https://www.w3.org/2000/01/rdf-schema#>.
+
+:Person a rdf:Class;
+  rdfs:label "Person"@en;
+  rdfs:comment "The Person class represents people"@en.
+
+:Student a rdf:Class;
+  rdfs:label "Student"@en;
+  rdfs:comment "A person enrolled in a school or other educational institution."@en;
+  rdfs:subClassOf :Person.
+
+:firstName a rdfs:Property;
+  rdfs:label "First name"@en;
+  rdfs:comment "The first name of a person."@en;
+  rdfs:domain :Person;
+  rdfs:range rdfs:Literal.
+
+:lastName a rdfs:Property;
+  rdfs:label "Last name"@en;
+  rdfs:comment "The last name of a person."@en;
+  rdfs:domain :Person;
+  rdfs:range rdfs:Literal.
+
+:Organisation a rdfs:Class;
+  rdfs:label "Organisation"@en;
+  rdfs:comment "The Organisation class represents social instititutions such as companies, societies"@en.
+
+:name a rdfs:Property;
+  rdfs:label "Name"@en;
+  rdfs:comment "The name of an organisation."@en;
+  rdfs:domain :Organisation;
+  rdfs:range rdfs:Literal.
+
+:elevatorPitch a rdfs:Property;
+  rdfs:label "Elevator pitch"@en;
+  rdfs:comment "The elevator pitch of a company."@en;
+  rdfs:domain :Organisation;
+  rdfs:range rdfs:Literal.
+
+:worksFor a rdfs:Property;
+  rdfs:label "Works for"@en;
+  rdfs:comment "Organizations that the person works for."@en;
+  rdfs:domain :Organisation;
+  rdfs:range rdfs:Literal.
+
+:knows a rdfs:Property;
+  rdfs:label "Works for"@en;
+  rdfs:comment "A person known by this person."@en;
+  rdfs:domain :Person;
+  rdfs:range :Person.
+
+:interestedIn a rdfs:Property;
+  rdfs:label "Interested in"@en;
+  rdfs:comment "A topic which a person is interested in."@en;
+  rdfs:domain :Person;
+  rdfs:range rdfs:Topic.
+
+:Topic a rdf:Class;
+  rdfs:label "Topic"@en;
+  rdfs:comment "The Topic class represents an interest topic."@en.
+
