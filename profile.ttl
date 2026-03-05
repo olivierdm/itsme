@@ -1,7 +1,9 @@
 @prefix : <#>.
 @prefix tdh: <https://tdhulster.github.io/knowledge-graphs-ugent-2026/vocab.ttl#>.
-@prefix rdf: <https://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix rdfs: <https://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix schema: <http://schema.org/> .
 @prefix seppe: <https://seppesantens.github.io/rdf-lab2/data.ttl#>.
 @prefix ward: <https://www.tabulas.eu/ward/profile.ttl#>.
 @prefix thijs: <https://tdhulster.github.io/knowledge-graphs-ugent-2026/profile.ttl#>.
@@ -17,12 +19,11 @@
 :BelgianDefence a tdh:Organisation, org:Organization;
     tdh:name "Belgian Defence";
     schema:legalName "Ministère de la Défense";
-    schema:identifier "0308.357.159"; # Official KBO Number
-    tdh:elevatorPitch "Belgian Defence is responsible for the national sovereignty of Belgium, participating in collective defense through NATO, and supporting international peace and security through EU and UN missions.";
+    schema:identifier "0308.357.159";
+    tdh:elevatorPitch "Belgian Defence is responsible for the national sovereignty of Belgium...";
     org:hasSubOrganization :LandComponent, :AirComponent, :MaritimeComponent, :MedicalComponent, :CyberCommand .
 
 :UnmannedSystems a tdh:Topic.
-
 :KnowledgeGraphs a tdh:Topic.  
 
 seppe:me a tdh:Person, tdh:Student.
