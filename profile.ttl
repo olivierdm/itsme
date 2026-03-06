@@ -10,6 +10,7 @@
   odmvoc:firstName "Olivier";
   odmvoc:lastName "De Meyst";
   odmvoc:worksFor :BelgianDefence;
+  odmvoc:yearOfStudy "Custom Master";
   odmvoc:knows seppe:me, ward:me, thijs:me, marlin:me;
   odmvoc:interestedIn :UnmannedSystems;
   odmvoc:interestedIn :KnowledgeGraphs.
@@ -20,6 +21,21 @@
     odmvoc:identifier <kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0308.357.159>;
     odmvoc:description "Belgian Defence is responsible for the national sovereignty of Belgium, participating in collective defense through NATO, and supporting international peace and security through EU and UN missions.";
     odmvoc:hasSubOrganization :LandForce, :AirForce, :Navy, :MedicalService, :CyberForce .
+
+:LandForce a odmvoc:Organisation;
+    odmvoc:name "Land Component".
+
+:AirForce a odmvoc:Organisation;
+    odmvoc:name "Air Component".
+
+:Navy a odmvoc:Organisation;
+    odmvoc:name "Naval Component".
+
+:MedicalService a odmvoc:Organisation;
+    odmvoc:name "Medical Component".
+
+:CyberForce a odmvoc:Organisation;
+    odmvoc:name "Cyber Command".
 
 :UnmannedSystems a odmvoc:Topic.
 :KnowledgeGraphs a odmvoc:Topic.  
