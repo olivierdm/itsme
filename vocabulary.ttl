@@ -33,9 +33,9 @@
   rdfs:domain :Organisation;
   rdfs:range rdfs:Literal.
 
-:elevatorPitch a rdfs:Property;
-  rdfs:label "Elevator pitch"@en;
-  rdfs:comment "The elevator pitch of a company."@en;
+:description a rdfs:Property;
+  rdfs:label "Description"@en;
+  rdfs:comment "A description of the organisation."@en;
   rdfs:domain :Organisation;
   rdfs:range rdfs:Literal.
 
@@ -51,6 +51,12 @@
   rdfs:domain :Person;
   rdfs:range :Person.
 
+:yearOfStudy a rdfs:Property;
+  rdfs:label "Year of study"@en;
+  rdfs:comment "The current year or programme of study of a student."@en;
+  rdfs:domain :Student;
+  rdfs:range rdfs:Literal.
+
 :interestedIn a rdfs:Property;
   rdfs:label "Interested in"@en;
   rdfs:comment "A topic which a person is interested in."@en;
@@ -60,4 +66,21 @@
 :Topic a rdf:Class;
   rdfs:label "Topic"@en;
   rdfs:comment "The Topic class represents an interest topic."@en.
+
+:legalName a rdfs:Property;
+  rdfs:label "Legal name"@en;
+  rdfs:comment "The official legal name of an organisation."@en;
+  rdfs:domain :Organisation;
+  rdfs:range rdfs:Literal.
+
+:identifier a rdfs:Property;
+  rdfs:label "Identifier"@en;
+  rdfs:comment "A unique identifier for an organisation (e.g. KBO number)."@en;
+  rdfs:domain :Organisation.
+
+:hasSubOrganization a rdfs:Property;
+  rdfs:label "Has sub-organization"@en;
+  rdfs:comment "A sub-organization of this organisation."@en;
+  rdfs:domain :Organisation;
+  rdfs:range :Organisation.
 

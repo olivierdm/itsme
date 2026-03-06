@@ -1,30 +1,25 @@
 @prefix : <#>.
 @prefix odmvoc: <https://raw.githubusercontent.com/olivierdm/itsme/main/vocabulary.ttl#>.
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-
-# Added missing prefixes
-@prefix org: <http://www.w3.org/ns/org#> .
-@prefix schema: <http://schema.org/> .
 
 @prefix seppe: <https://seppesantens.github.io/rdf-lab2/data.ttl#>.
 @prefix ward: <https://www.tabulas.eu/ward/profile.ttl#>.
 @prefix thijs: <https://tdhulster.github.io/knowledge-graphs-ugent-2026/profile.ttl#>.
+@prefix marlin: <https://mudoki.github.io/kg-lab2-folio/profile.ttl#>.
 
 :me a odmvoc:Person, odmvoc:Student;
   odmvoc:firstName "Olivier";
   odmvoc:lastName "De Meyst";
   odmvoc:worksFor :BelgianDefence;
-  odmvoc:knows seppe:me, ward:me, thijs:me;
+  odmvoc:knows seppe:me, ward:me, thijs:me, marlin:me;
   odmvoc:interestedIn :UnmannedSystems;
   odmvoc:interestedIn :KnowledgeGraphs.
 
-:BelgianDefence a odmvoc:Organisation, org:Organization;
+:BelgianDefence a odmvoc:Organisation;
     odmvoc:name "Belgian Defence";
-    schema:legalName "Ministère de la Défense";
-    schema:identifier <kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0308.357.159>;
-    odmvoc:elevatorPitch "Belgian Defence is responsible for the national sovereignty of Belgium, participating in collective defense through NATO, and supporting international peace and security through EU and UN missions.";
-    org:hasSubOrganization :LandForce, :AirForce, :Navy, :MedicalService, :CyberForce .
+    odmvoc:legalName "Ministère de la Défense";
+    odmvoc:identifier <kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0308.357.159>;
+    odmvoc:description "Belgian Defence is responsible for the national sovereignty of Belgium, participating in collective defense through NATO, and supporting international peace and security through EU and UN missions.";
+    odmvoc:hasSubOrganization :LandForce, :AirForce, :Navy, :MedicalService, :CyberForce .
 
 :UnmannedSystems a odmvoc:Topic.
 :KnowledgeGraphs a odmvoc:Topic.  
@@ -32,3 +27,4 @@
 seppe:me a odmvoc:Person, odmvoc:Student.
 ward:me a odmvoc:Person, odmvoc:Student.
 thijs:me a odmvoc:Person, odmvoc:Student.
+marlin:me a odmvoc:Person, odmvoc:Student.

@@ -1,9 +1,8 @@
 # [https://raw.githubusercontent.com/olivierdm/itsme/main/profile.ttl](https://raw.githubusercontent.com/olivierdm/itsme/main/profile.ttl)
 
-### Part 5: Command Output
+### Part 5: Curl Command Output
 
 ```bash
-olivierdemeyst@laptop % curl -I https://raw.githubusercontent.com/olivierdm/itsme/main/profile.ttl
 
 HTTP/2 200 
 cache-control: max-age=300
@@ -35,7 +34,7 @@ content-length: 1547
 ### Comments on Publication Features
 
 * **Content-Type:** The server returns `text/plain; charset=utf-8`. While the official IANA media type for Turtle is `text/turtle`, GitHub Raw defaults to plain text. Most RDF parsers handle this correctly as long as the syntax is valid.
+* **etag:** contains a hash and is used to see if header content has changed. If it hasn't, the cached data can be used.
 * **CORS (Cross-Origin Resource Sharing):** The header `access-control-allow-origin: *` is present. This is a critical feature that allows web-based applications (like `rdf-play` or other SPARQL clients) to fetch my RDF data directly from the browser without security blocks.
-* **HTTPS:** The connection is secured via `strict-transport-security` (HSTS) with a long max-age. This ensures the integrity and privacy of the data during transmission.
 * **Caching:** The `cache-control: max-age=300` and `expires` headers indicate a 5-minute cache window. This balances server performance with the need for data freshness when I push updates to my profile.
 * **Compression:** Although not explicitly shown as `gzip` in this specific header dump, the `vary: Accept-Encoding` header indicates the server is prepared to serve compressed versions of the file to save bandwidth.
