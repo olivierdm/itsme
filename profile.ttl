@@ -16,6 +16,10 @@
   odmvoc:interestedIn :UnmannedSystems;
   odmvoc:interestedIn :KnowledgeGraphs.
 
+:knowledge-graphs-2025 a odmvoc:Course ;
+    odmvoc:name "Knowledge Graphs 2025" ;
+    odmvoc:seeAlso <https://studiekiezer.ugent.be/studiefiche/nl/E018160/2025> .
+
 :BelgianDefence a odmvoc:Organisation;
     odmvoc:name "Belgian Defence";
     odmvoc:legalName "Ministère de la Défense";
