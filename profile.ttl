@@ -11,6 +11,7 @@
   odmvoc:lastName "De Meyst";
   odmvoc:worksFor :BelgianDefence;
   odmvoc:yearOfStudy "Custom Master";
+  odmvoc:enrolledIn :knowledge-graphs-2025 ;
   odmvoc:knows seppe:me, ward:me, thijs:me, marlin:me;
   odmvoc:interestedIn :UnmannedSystems;
   odmvoc:interestedIn :KnowledgeGraphs.
