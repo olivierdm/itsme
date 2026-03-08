@@ -23,15 +23,31 @@
   rdfs:domain :Person;
   rdfs:range rdfs:Literal.
 
+:Course a rdfs:Class ;
+    rdfs:label "Course" ;
+    rdfs:comment "A course offered at an educational institution." .
+
+:enrolledIn a rdf:Property ;
+    rdfs:label "enrolled in" ;
+    rdfs:comment "Relates a person to a course they are enrolled in." ;
+    rdfs:domain :Person ;
+    rdfs:range :Course .
+
+:seeAlso a rdf:Property ;
+    rdfs:label "see also" ;
+    rdfs:comment "Relates a resource to another resource that describes the same thing." ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range rdfs:Resource .
+
 :Organisation a rdfs:Class;
   rdfs:label "Organisation"@en;
   rdfs:comment "The Organisation class represents social instititutions such as companies, societies"@en.
 
-:name a rdfs:Property;
-  rdfs:label "Name"@en;
-  rdfs:comment "The name of an organisation."@en;
-  rdfs:domain :Organisation;
-  rdfs:range rdfs:Literal.
+:name a rdf:Property ;
+    rdfs:label "name" ;
+    rdfs:comment "The name of a resource"@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range rdfs:Literal .
 
 :description a rdfs:Property;
   rdfs:label "Description"@en;
