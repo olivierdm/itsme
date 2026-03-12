@@ -1,6 +1,5 @@
 @prefix : <#>.
-@prefix odmvoc: <https://raw.githubusercontent.com/olivierdm/itsme/main/vocabulary.ttl#>.
-
+@prefix odmvoc: <https://olivierdm.github.io/vocabulary.ttl#>.
 @prefix seppe: <https://seppesantens.github.io/rdf-lab2/data.ttl#>.
 @prefix ward: <https://www.tabulas.eu/ward/profile.ttl#>.
 @prefix thijs: <https://tdhulster.github.io/knowledge-graphs-ugent-2026/profile.ttl#>.
