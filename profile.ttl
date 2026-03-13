@@ -4,6 +4,14 @@
 @prefix ward: <https://www.tabulas.eu/ward/profile.ttl#>.
 @prefix thijs: <https://tdhulster.github.io/knowledge-graphs-ugent-2026/profile.ttl#>.
 @prefix marlin: <https://mudoki.github.io/kg-lab2-folio/profile.ttl#>.
+@prefix dries: <https://driesver.github.io/ugent-knowledge-graphs/data_lab2.ttl#>.
+@prefix annalin: <https://anyplin.github.io/Knowledge-Graphs/data.ttl#>.
+@prefix tiantang: <https://tiantangvanhoecke.github.io/KG_Lab2/data.ttl#>.
+@prefix pikajojo: <https://pikajojo.github.io/Knowlege_Graph_Lab2/data.ttl#>.
+@prefix jelle: <https://jellenelis.github.io/knowledge-graphs/data.ttl#>.
+@prefix kelly: <https://kellymarino.github.io/knowledge-graphs-2026/data.ttl#>.
+@prefix jana: <https://janaverl.github.io/knowledge_graphs_lab2/0001.ttl#>.
+@prefix jule: <jule4ka.github.io/kg_lab2/data.ttl#>.
 
 :me a odmvoc:Person, odmvoc:Student;
   odmvoc:firstName "Olivier";
@@ -11,7 +19,7 @@
   odmvoc:worksFor :BelgianDefence;
   odmvoc:yearOfStudy "Custom Master";
   odmvoc:enrolledIn :knowledge-graphs-2025 ;
-  odmvoc:knows seppe:me, ward:me, thijs:me, marlin:me;
+  odmvoc:knows seppe:me, ward:me, thijs:me, marlin:me, dries:me, annalin:me, tiantang:me, pikajojo:me, jelle:me, kelly:me, jana:me, jule:me;
   odmvoc:interestedIn :UnmannedSystems;
   odmvoc:interestedIn :KnowledgeGraphs.
 
