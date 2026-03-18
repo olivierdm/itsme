@@ -1,12 +1,17 @@
+@base <https://olivierdm.github.io/itsme/vocabulary.ttl>.
 @prefix : <#>.
-@prefix rdf: <https://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix rdfs: <https://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
 
-:Person a rdf:Class;
+# ─── Person & Student ────────────────────────────────────────────────────────
+
+:Person a rdfs:Class;
   rdfs:label "Person"@en;
-  rdfs:comment "The Person class represents people"@en.
+  rdfs:comment "The Person class represents people"@en;
+  rdfs:subClassOf foaf:Person.
 
-:Student a rdf:Class;
+:Student a rdfs:Class;
   rdfs:label "Student"@en;
   rdfs:comment "A person enrolled in a school or other educational institution."@en;
   rdfs:subClassOf :Person.
@@ -15,57 +20,29 @@
   rdfs:label "First name"@en;
   rdfs:comment "The first name of a person."@en;
   rdfs:domain :Person;
-  rdfs:range rdfs:Literal.
+  rdfs:range rdfs:Literal;
+  rdfs:subPropertyOf foaf:firstName.
 
 :lastName a rdfs:Property;
   rdfs:label "Last name"@en;
   rdfs:comment "The last name of a person."@en;
   rdfs:domain :Person;
-  rdfs:range rdfs:Literal.
+  rdfs:range rdfs:Literal;
+  rdfs:subPropertyOf foaf:familyName.
 
-:Course a rdfs:Class ;
-    rdfs:label "Course" ;
-    rdfs:comment "A course offered at an educational institution." .
-
-:enrolledIn a rdf:Property ;
-    rdfs:label "enrolled in" ;
-    rdfs:comment "Relates a person to a course they are enrolled in." ;
-    rdfs:domain :Person ;
-    rdfs:range :Course .
-
-:seeAlso a rdf:Property ;
-    rdfs:label "see also" ;
-    rdfs:comment "Relates a resource to another resource that describes the same thing." ;
-    rdfs:domain rdfs:Resource ;
-    rdfs:range rdfs:Resource .
-
-:Organisation a rdfs:Class;
-  rdfs:label "Organisation"@en;
-  rdfs:comment "The Organisation class represents social instititutions such as companies, societies"@en.
-
-:name a rdf:Property ;
-    rdfs:label "name" ;
-    rdfs:comment "The name of a resource"@en ;
-    rdfs:domain rdfs:Resource ;
-    rdfs:range rdfs:Literal .
-
-:description a rdfs:Property;
-  rdfs:label "Description"@en;
-  rdfs:comment "A description of the organisation."@en;
-  rdfs:domain :Organisation;
-  rdfs:range rdfs:Literal.
-
-:worksFor a rdfs:Property;
-  rdfs:label "Works for"@en;
-  rdfs:comment "Organizations that the person works for."@en;
-  rdfs:domain :Organisation;
-  rdfs:range rdfs:Literal.
+:name a rdfs:Property;
+  rdfs:label "name"@en;
+  rdfs:comment "The name of a resource."@en;
+  rdfs:domain rdfs:Resource;
+  rdfs:range rdfs:Literal;
+  rdfs:subPropertyOf foaf:name.
 
 :knows a rdfs:Property;
-  rdfs:label "Works for"@en;
+  rdfs:label "Knows"@en;
   rdfs:comment "A person known by this person."@en;
   rdfs:domain :Person;
-  rdfs:range :Person.
+  rdfs:range :Person;
+  rdfs:subPropertyOf foaf:knows.
 
 :yearOfStudy a rdfs:Property;
   rdfs:label "Year of study"@en;
@@ -77,11 +54,44 @@
   rdfs:label "Interested in"@en;
   rdfs:comment "A topic which a person is interested in."@en;
   rdfs:domain :Person;
-  rdfs:range rdfs:Topic.
+  rdfs:range :Topic.
 
-:Topic a rdf:Class;
-  rdfs:label "Topic"@en;
-  rdfs:comment "The Topic class represents an interest topic."@en.
+:worksFor a rdfs:Property;
+  rdfs:label "Works for"@en;
+  rdfs:comment "Organizations that the person works for."@en;
+  rdfs:domain :Person;
+  rdfs:range :Organisation.
+
+# ─── Course ──────────────────────────────────────────────────────────────────
+
+:Course a rdfs:Class;
+  rdfs:label "Course"@en;
+  rdfs:comment "A course offered at an educational institution."@en.
+
+:enrolledIn a rdfs:Property;
+  rdfs:label "enrolled in"@en;
+  rdfs:comment "Relates a person to a course they are enrolled in."@en;
+  rdfs:domain :Person;
+  rdfs:range :Course.
+
+:seeAlso a rdfs:Property;
+  rdfs:label "see also"@en;
+  rdfs:comment "Relates a resource to another resource that describes the same thing."@en;
+  rdfs:domain rdfs:Resource;
+  rdfs:range rdfs:Resource;
+  rdfs:subPropertyOf rdfs:seeAlso.
+
+# ─── Organisation ────────────────────────────────────────────────────────────
+
+:Organisation a rdfs:Class;
+  rdfs:label "Organisation"@en;
+  rdfs:comment "The Organisation class represents social institutions such as companies, societies"@en;
+  rdfs:subClassOf foaf:Organization.
+
+:description a rdfs:Property;
+  rdfs:label "Description"@en;
+  rdfs:comment "A description of the resource."@en;
+  rdfs:range rdfs:Literal.
 
 :legalName a rdfs:Property;
   rdfs:label "Legal name"@en;
@@ -100,3 +110,53 @@
   rdfs:domain :Organisation;
   rdfs:range :Organisation.
 
+# ─── Topic ───────────────────────────────────────────────────────────────────
+
+:Topic a rdfs:Class;
+  rdfs:label "Topic"@en;
+  rdfs:comment "The Topic class represents an interest topic."@en.
+
+# ─── Photo / Image ───────────────────────────────────────────────────────────
+
+:Photo a rdfs:Class;
+  rdfs:label "Photo"@en;
+  rdfs:comment "A photograph or digital image."@en;
+  rdfs:subClassOf foaf:Image.
+
+:title a rdfs:Property;
+  rdfs:label "Title"@en;
+  rdfs:comment "The title of the photo."@en;
+  rdfs:domain :Photo;
+  rdfs:range rdfs:Literal.
+
+:photographer a rdfs:Property;
+  rdfs:label "Photographer"@en;
+  rdfs:comment "The photographer or creator of the photo."@en;
+  rdfs:domain :Photo;
+  rdfs:subPropertyOf foaf:maker.
+
+:depicts a rdfs:Property;
+  rdfs:label "Depicts"@en;
+  rdfs:comment "A person or thing depicted in the photo."@en;
+  rdfs:domain :Photo;
+  rdfs:range :Person;
+  rdfs:subPropertyOf foaf:depicts.
+
+:takenAt a rdfs:Property;
+  rdfs:label "Taken at"@en;
+  rdfs:comment "The location where the photo was taken."@en;
+  rdfs:domain :Photo;
+  rdfs:range rdfs:Literal.
+
+:url a rdf:Property ;
+  rdfs:label "image URL" ;
+  rdfs:comment "A URL pointing directly to the image file of a photograph." ;
+  rdfs:domain :Photo;
+  rdfs:range rdfs:Resource ;
+  rdfs:subPropertyOf foaf:page . #not a perfect match but in essence the image url is like a page about the photo itself
+
+:summary a rdfs:Property;
+  rdfs:label "Summary"@en;
+  rdfs:comment "A textual summary of the photo."@en;
+  rdfs:domain :Photo;
+  rdfs:range rdfs:Literal.

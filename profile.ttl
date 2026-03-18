@@ -1,3 +1,4 @@
+@base <https://olivierdm.github.io/itsme/profile.ttl>.
 @prefix : <#>.
 @prefix odmvoc: <https://olivierdm.github.io/itsme/vocabulary.ttl#>.
 @prefix seppe: <https://seppesantens.github.io/rdf-lab2/data.ttl#>.
@@ -11,48 +12,94 @@
 @prefix jelle: <https://jellenelis.github.io/knowledge-graphs/data.ttl#>.
 @prefix kelly: <https://kellymarino.github.io/knowledge-graphs-2026/data.ttl#>.
 @prefix jana: <https://janaverl.github.io/knowledge_graphs_lab2/0001.ttl#>.
-@prefix jule: <jule4ka.github.io/kg_lab2/data.ttl#>.
+@prefix jule: <https://jule4ka.github.io/kg_lab2/data.ttl#>.
+
+# ─── Me ──────────────────────────────────────────────────────────────────────
 
 :me a odmvoc:Person, odmvoc:Student;
   odmvoc:firstName "Olivier";
   odmvoc:lastName "De Meyst";
+  odmvoc:name "Olivier De Meyst";
   odmvoc:worksFor :BelgianDefence;
   odmvoc:yearOfStudy "Custom Master";
-  odmvoc:enrolledIn :knowledge-graphs-2025 ;
+  odmvoc:enrolledIn :knowledge-graphs-2025;
   odmvoc:knows seppe:me, ward:me, thijs:me, marlin:me, dries:me, annalin:me, tiantang:me, pikajojo:me, jelle:me, kelly:me, jana:me, jule:me;
   odmvoc:interestedIn :UnmannedSystems;
   odmvoc:interestedIn :KnowledgeGraphs.
 
-:knowledge-graphs-2025 a odmvoc:Course ;
-    odmvoc:name "Knowledge Graphs 2025" ;
-    odmvoc:seeAlso <https://studiekiezer.ugent.be/studiefiche/nl/E018160/2025> .
+:knowledge-graphs-2025 a odmvoc:Course;
+  odmvoc:name "Knowledge Graphs 2025";
+  odmvoc:seeAlso <https://studiekiezer.ugent.be/studiefiche/nl/E018160/2025>.
 
 :BelgianDefence a odmvoc:Organisation;
-    odmvoc:name "Belgian Defence";
-    odmvoc:legalName "Ministère de la Défense";
-    odmvoc:identifier <kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0308.357.159>;
-    odmvoc:description "Belgian Defence is responsible for the national sovereignty of Belgium, participating in collective defense through NATO, and supporting international peace and security through EU and UN missions.";
-    odmvoc:hasSubOrganization :LandForce, :AirForce, :Navy, :MedicalService, :CyberForce .
+  odmvoc:name "Belgian Defence";
+  odmvoc:legalName "Ministère de la Défense";
+  odmvoc:identifier <kbopub.economie.fgov.be/kbopub/zoeknummerform.html?nummer=0308.357.159>;
+  odmvoc:description "Belgian Defence is responsible for the national sovereignty of Belgium, participating in collective defense through NATO, and supporting international peace and security through EU and UN missions.";
+  odmvoc:hasSubOrganization :LandForce, :AirForce, :Navy, :MedicalService, :CyberForce.
 
 :LandForce a odmvoc:Organisation;
-    odmvoc:name "Land Component".
+  odmvoc:name "Land Component".
 
 :AirForce a odmvoc:Organisation;
-    odmvoc:name "Air Component".
+  odmvoc:name "Air Component".
 
 :Navy a odmvoc:Organisation;
-    odmvoc:name "Naval Component".
+  odmvoc:name "Naval Component".
 
 :MedicalService a odmvoc:Organisation;
-    odmvoc:name "Medical Component".
+  odmvoc:name "Medical Component".
 
 :CyberForce a odmvoc:Organisation;
-    odmvoc:name "Cyber Command".
+  odmvoc:name "Cyber Command".
 
 :UnmannedSystems a odmvoc:Topic.
-:KnowledgeGraphs a odmvoc:Topic.  
+:KnowledgeGraphs a odmvoc:Topic.
 
 seppe:me a odmvoc:Person, odmvoc:Student.
 ward:me a odmvoc:Person, odmvoc:Student.
 thijs:me a odmvoc:Person, odmvoc:Student.
 marlin:me a odmvoc:Person, odmvoc:Student.
+
+# ─── Persons depicted in photographs ─────────────────────────────────────────
+
+:KanoJigoro a odmvoc:Person;
+  odmvoc:firstName "Jigorō";
+  odmvoc:lastName "Kanō";
+  odmvoc:name "Kanō Jigorō".
+
+:VincentVanGogh a odmvoc:Person;
+  odmvoc:firstName "Vincent";
+  odmvoc:lastName "van Gogh";
+  odmvoc:name "Vincent van Gogh".
+
+# ─── Photographs ─────────────────────────────────────────────────────────────
+
+:photo-me a odmvoc:Photo;
+  odmvoc:title "Olivier De Meyst - Profile Photo";
+  odmvoc:depicts :me;
+  odmvoc:photographer :me;
+  odmvoc:takenAt "Ghent, Belgium";
+  odmvoc:summary "A profile photo of Olivier De Meyst, a student enrolled in the Knowledge Graphs course at Ghent University.";
+  odmvoc:url <https://olivierdm.github.io/itsme/olivier.jpg>.
+
+:photo-arduino a odmvoc:Photo;
+  odmvoc:title "Arduino Logo (Registered Trademark)";
+  odmvoc:takenAt "Online";
+  odmvoc:summary "The official registered trademark logo of Arduino, an open-source electronics platform used for building digital devices and interactive objects.";
+  odmvoc:url <https://commons.wikimedia.org/wiki/File:Arduino_Logo_Registered.svg>.
+
+:photo-kano a odmvoc:Photo;
+  odmvoc:title "Portrait of Kanō Jigorō";
+  odmvoc:depicts :KanoJigoro;
+  odmvoc:takenAt "Japan";
+  odmvoc:summary "A historical portrait photograph of Kanō Jigorō (1860-1938), the founder of judo and a prominent figure in Japanese martial arts education.";
+  odmvoc:url <https://en.wikipedia.org/wiki/Kan%C5%8D_Jigor%C5%8D#/media/File:Portrait_of_late_Mr._Kano.jpg>.
+
+:photo-vincent-van-gogh a odmvoc:Photo;
+  odmvoc:title "Self-Portrait by Vincent van Gogh (1887)";
+  odmvoc:depicts :VincentVanGogh;
+  odmvoc:photographer :VincentVanGogh;
+  odmvoc:takenAt "Paris, France";
+  odmvoc:summary "A self-portrait by Dutch Post-Impressionist painter Vincent van Gogh, painted around 1887 during his stay in Paris.";
+  odmvoc:url <https://en.wikipedia.org/wiki/Self-portrait_%28van_Gogh,_Paris%29#/media/File:Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg>.
