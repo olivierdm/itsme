@@ -9,6 +9,8 @@
 |------|-----|
 | Data (profile.ttl) | <https://olivierdm.github.io/itsme/profile.ttl> |
 | Vocabulary (vocabulary.ttl) | <https://olivierdm.github.io/itsme/vocabulary.ttl> |
+| Used rdfs/owl rules (rdfs-owl_rules.n3) | <https://olivierdm.github.io/itsme/rdfs-owl_rules.n3> |
+
 
 ---
 
@@ -18,10 +20,10 @@
 
 | Local name | Subject URI / seeAlso | Depicts |
 |---|---|---|
-| *(self)* | `https://olivierdm.github.io/itsme/olivier.jpg` | Olivier De Meyst |
-| `:arduinoLogo` | `commons.wikimedia.org/…Arduino_Logo_Registered.svg` | *(no person)* |
-| `:kanoPortrait` | `en.wikipedia.org/…Portrait_of_late_Mr._Kano.jpg` | Kanō Jigorō |
-| `:vanGoghSelfPortrait` | `en.wikipedia.org/...Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg` | Vincent van Gogh |
+| `:photo-me`| `https://olivierdm.github.io/itsme/olivier.jpg` | Olivier De Meyst |
+| `:photo-arduino` | `commons.wikimedia.org/…Arduino_Logo_Registered.svg` | *(no person)* |
+| `:photo-kano` | `en.wikipedia.org/…Portrait_of_late_Mr._Kano.jpg` | Kanō Jigorō |
+| `:photo-vincent-van-gogh` | `en.wikipedia.org/...Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg` | Vincent van Gogh |
 
 `vocabulary.ttl` was extended with the following photo-related concepts:
 
@@ -30,6 +32,7 @@
 * **`:photographer`** – creator of the photo
 * **`:depicts`** – person(s) shown in the photo
 * **`:takenAt`** – location where the photo was taken
+* **`:url`** – image url
 * **`:summary`** – human-readable description
 
 ---
@@ -49,6 +52,7 @@ The vocabulary was connected to FOAF as follows:
 :knows       rdfs:subPropertyOf foaf:knows.
 :depicts     rdfs:subPropertyOf foaf:depicts.
 :photographer rdfs:subPropertyOf foaf:maker.
+:url         rdfs:subPropertyOf foaf:page.
 ```
 
 ---
